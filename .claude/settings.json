@@ -1,0 +1,76 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cargo *)",
+      "Bash(cross *)",
+      "Bash(rustup *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git checkout -b *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git branch *)",
+      "Edit(nearvic-client/**)",
+      "Edit(nearvic-agent/**)",
+      "Edit(nearvic-proto/**)",
+      "Edit(CLAUDE.md)",
+      "Edit(.claude/**)",
+      "Read(**)"
+    ],
+    "deny": [
+      "Bash(git push --force *)",
+      "Bash(git reset --hard *)",
+      "Bash(rm -rf *)",
+      "Bash(git push origin main *)",
+      "Edit(*.env)",
+      "Edit(**/secrets*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_FILE_PATHS\" | grep -qE '\\.rs$'; then cargo fmt -- \"$CLAUDE_FILE_PATHS\" 2>/dev/null; fi"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'rm -rf|git push --force|reset --hard'; then echo 'BLOCKED: Destructive command requires manual confirmation.' && exit 1; fi"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"Session ended at $(date). Run /progress to save session state.\" >> ~/.claude/nearvic-session.log"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Code needs your input\" with title \"Nearvic — Claude Code\"' 2>/dev/null || notify-send 'Claude Code' 'Needs your input' 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}
