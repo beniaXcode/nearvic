@@ -1,0 +1,11 @@
+direct_prompt: |
+  Review this PR for the Nearvic remote desktop streaming project.
+  Focus only on:
+  - Bugs and logic errors
+  - Memory safety issues (Rust unsafe, lifetime problems)
+  - Security issues (unencrypted paths, missing auth)
+  - ARM64 incompatibilities
+  - Breaking changes to nearvic-proto types
+
+  Do not comment on style, naming, or formatting.
+  Be concise. One issue per comment.
