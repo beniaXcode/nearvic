@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yahia Mohamed Benabbou — Senior DevOps &amp; DevSecOps Engineer · Cloud Solutions Architect</title>
+<meta name="description" content="Senior DevOps and DevSecOps Engineer, Platform Engineer, SRE and Cloud Solutions Architect. I design, migrate, secure and operate production infrastructure across AWS, Azure and Oracle Cloud. Available for contract, remote from Rabat on European hours.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F5F6FA">
+<link rel="canonical" href="https://profile.nearvic.com">
+<meta property="og:title" content="Yahia Mohamed Benabbou — Senior DevOps &amp; DevSecOps Engineer · Cloud Solutions Architect">
+<meta property="og:description" content="Whatever you are shipping, I build the platform underneath it. Contract and consulting engagements, remote-first across EMEA.">
+<meta property="og:url" content="https://profile.nearvic.com">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────────────────────────
+   THEME TOKENS
+   Built out from #191970 — the midnight blue already running
+   through Yahia's document system — with amber phosphor as
+   the only accent: the colour of the sysadmin CRT, and the
+   "needs attention" state in every monitoring stack shipped.
+   Light is the default. Dark is one click away.
+   ───────────────────────────────────────────────────────── */
+:root{
+  --bg:#F4F5FA;
+  --plate:#FFFFFF;
+  --plate-2:#EDEFF8;
+  --gutter:#0B1030;
+  --brand:#191970;
+  --line:#DCDFEF;
+  --line-strong:#C3C8E2;
+  --text:#0F1430;
+  --muted:#525A7F;
+  --muted-2:#7B84AA;
+  --amber:#FFB020;
+  --amber-ink:#9E5D00;
+  --on-amber:#0F1430;
+  --shadow:0 1px 2px rgba(15,20,48,.05), 0 12px 28px -18px rgba(15,20,48,.28);
+  --grid-line:rgba(25,25,112,.055);
+  --glow:rgba(25,25,112,.07);
+
+  --rail:88px;
+  --wrap:1200px;
+
+  --display:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;
+  --body:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+}
+[data-theme="dark"]{
+  --bg:#070A1C;
+  --plate:#0C1130;
+  --plate-2:#111842;
+  --gutter:#040614;
+  --line:#1E2554;
+  --line-strong:#2B3369;
+  --text:#E9ECF9;
+  --muted:#98A1CC;
+  --muted-2:#727BAD;
+  --amber-ink:#FFB020;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 16px 34px -20px rgba(0,0,0,.7);
+  --grid-line:rgba(120,140,255,.05);
+  --glow:rgba(25,25,112,.5);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:var(--bg)}
+body{
+  font-family:var(--body);
+  background:var(--bg);color:var(--text);
+  font-size:17px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+  transition:background .35s ease,color .35s ease;
+}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+::selection{background:var(--amber);color:var(--on-amber)}
+
+.sprite{display:none}
+.ico{width:19px;height:19px;flex:none;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--amber);color:var(--on-amber);padding:10px 16px;font-family:var(--mono);font-size:12px;z-index:999}
+.skip:focus{left:calc(var(--rail) + 12px)}
+
+/* ── SIGNATURE: the drafting-sheet gutter ───────────────── */
+.rail{
+  position:fixed;left:0;top:0;bottom:0;width:var(--rail);
+  background:var(--gutter);border-right:1px solid rgba(255,255,255,.09);
+  display:flex;flex-direction:column;align-items:center;
+  padding:22px 0 18px;z-index:60;
+}
+.rail__mark{
+  font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.01em;
+  color:#fff;padding-bottom:8px;border-bottom:2px solid var(--amber);
+}
+.rail__status{margin-top:20px;display:flex;flex-direction:column;align-items:center;gap:9px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--amber);position:relative;flex:none}
+.dot::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--amber);opacity:.55;animation:ping 2.6s ease-out infinite}
+@keyframes ping{0%{transform:scale(.55);opacity:.7}70%,100%{transform:scale(1.5);opacity:0}}
+.rail__status span{writing-mode:vertical-rl;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+.rail__nav{margin:auto 0;display:flex;flex-direction:column;align-items:center;gap:26px}
+.rail__link{display:flex;flex-direction:column;align-items:center;gap:9px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);transition:color .25s ease}
+.rail__link i{display:block;width:1px;height:14px;background:currentColor;opacity:.6;transition:height .25s ease,opacity .25s ease}
+.rail__link span{writing-mode:vertical-rl}
+.rail__link:hover{color:#fff}
+.rail__link.is-live{color:var(--amber)}
+.rail__link.is-live i{height:26px;opacity:1}
+.rail__block{font-family:var(--mono);font-size:9px;line-height:1.8;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);text-align:center;border-top:1px solid rgba(255,255,255,.12);padding-top:12px;width:56px}
+
+.tog{
+  display:grid;place-items:center;width:34px;height:34px;margin-bottom:16px;cursor:pointer;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.75);
+  transition:background .2s ease,color .2s ease,border-color .2s ease;
+}
+.tog:hover{background:var(--amber);border-color:var(--amber);color:var(--on-amber)}
+.tog .ico{width:16px;height:16px}
+.tog .i-moon{display:block}
+.tog .i-sun{display:none}
+[data-theme="dark"] .tog .i-moon{display:none}
+[data-theme="dark"] .tog .i-sun{display:block}
+
+.topbar{display:none;position:fixed;inset:0 0 auto 0;height:54px;z-index:60;background:var(--gutter);border-bottom:1px solid rgba(255,255,255,.09);align-items:center;justify-content:space-between;gap:14px;padding:0 14px 0 18px}
+.topbar__mark{font-family:var(--display);font-weight:800;font-size:16px;color:#fff}
+.topbar__right{display:flex;align-items:center;gap:14px}
+.topbar__status{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
+.topbar .tog{margin:0;width:30px;height:30px}
+
+/* ── LAYOUT ─────────────────────────────────────────────── */
+.page{margin-left:var(--rail)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(22px,4.4vw,64px)}
+.band{padding:clamp(74px,8.5vw,124px) 0;position:relative}
+.band--plate{background:var(--plate);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+section[id]{scroll-margin-top:20px}
+
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-ink);display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.eyebrow::after{content:'';flex:1;height:1px;background:var(--line-strong);max-width:170px}
+
+h2{
+  font-family:var(--display);font-weight:700;
+  letter-spacing:-.012em;word-spacing:.02em;line-height:1.16;
+  font-size:clamp(1.85rem,3.3vw,2.75rem);max-width:24ch;
+}
+.lede{font-size:clamp(1rem,1.3vw,1.1rem);line-height:1.7;color:var(--muted);max-width:64ch;margin-top:20px}
+
+/* ── HERO ───────────────────────────────────────────────── */
+.hero{position:relative;padding:clamp(88px,10.5vw,146px) 0 clamp(52px,6vw,76px);border-bottom:1px solid var(--line);overflow:hidden}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(to right,var(--grid-line) 1px,transparent 1px),
+    linear-gradient(to bottom,var(--grid-line) 1px,transparent 1px);
+  background-size:36px 36px;
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 76%);
+  mask-image:linear-gradient(to bottom,#000 0%,transparent 76%);
+  pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;top:-32%;left:-12%;width:72%;height:120%;pointer-events:none;
+  background:radial-gradient(ellipse at center,var(--glow),transparent 62%);
+}
+.hero .wrap{position:relative;z-index:1}
+.hero__kicker{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:30px}
+h1{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(2.35rem,5.5vw,4.55rem);
+  line-height:1.07;letter-spacing:-.019em;word-spacing:.035em;max-width:19ch;
+}
+.mark{box-shadow:inset 0 -.13em 0 var(--amber)}
+.hero__sub{margin-top:30px;max-width:66ch;font-size:clamp(1.02rem,1.35vw,1.16rem);line-height:1.7;color:var(--muted)}
+.hero__sub b{color:var(--text);font-weight:600}
+
+/* roles, not client logos — what a hiring manager actually scans for */
+.roles{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.roles li{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--text);background:var(--plate);border:1px solid var(--line-strong);
+  padding:9px 15px 9px 12px;box-shadow:var(--shadow);
+}
+.roles .ico{width:16px;height:16px;color:var(--amber-ink)}
+
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;padding:15px 26px;border:1px solid var(--line-strong);transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease}
+.btn--amber{background:var(--amber);color:var(--on-amber);border-color:var(--amber)}
+.btn--amber:hover{filter:brightness(1.07);transform:translateY(-2px)}
+.btn--ghost{color:var(--text);background:var(--plate)}
+.btn--ghost:hover{background:var(--text);color:var(--bg);border-color:var(--text);transform:translateY(-2px)}
+
+.readout{margin-top:clamp(48px,6vw,72px);border-top:1px solid var(--line-strong);display:grid;grid-template-columns:repeat(4,1fr)}
+.readout div{padding:22px 24px 0 0;border-right:1px solid var(--line)}
+.readout div:last-child{border-right:0}
+.readout b{display:block;font-family:var(--mono);font-weight:600;font-size:1.34rem;color:var(--amber-ink);letter-spacing:-.01em}
+.readout span{display:block;margin-top:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted-2);line-height:1.7}
+
+/* ── WORK ───────────────────────────────────────────────── */
+.work{margin-top:clamp(44px,5vw,62px);border-top:1px solid var(--line-strong)}
+.case{display:grid;grid-template-columns:200px 1fr 300px;gap:clamp(20px,3vw,48px);padding:34px 0;border-bottom:1px solid var(--line);align-items:start}
+.case__meta{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted-2);line-height:2}
+.case__meta em{display:block;font-style:normal;color:var(--amber-ink);letter-spacing:.11em}
+.case h3{font-family:var(--display);font-weight:700;font-size:1.32rem;letter-spacing:-.008em;line-height:1.3;color:var(--text)}
+.case p.desc{margin-top:12px;color:var(--muted);font-size:.99rem;max-width:56ch}
+.case__tech{margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--muted-2)}
+.outs{display:flex;flex-direction:column;gap:10px}
+.out{display:flex;gap:12px;align-items:baseline;font-family:var(--mono);font-size:12px}
+.out b{color:var(--amber-ink);font-weight:600;min-width:66px;font-size:13px}
+.out span{color:var(--muted);letter-spacing:.01em}
+
+/* ── SERVICES ───────────────────────────────────────────── */
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-strong);margin-top:clamp(40px,5vw,58px);border:1px solid var(--line-strong)}
+.svc article{background:var(--bg);padding:clamp(28px,3.4vw,44px)}
+.svc h3{font-family:var(--display);font-weight:700;font-size:1.2rem;letter-spacing:-.008em;line-height:1.35;color:var(--text)}
+.svc h3 i{display:flex;align-items:center;gap:9px;font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:16px;font-weight:500}
+.svc p{margin-top:14px;color:var(--muted);font-size:.97rem}
+.svc ul{margin-top:18px;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.svc li{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted-2);border:1px solid var(--line);padding:5px 10px}
+.terms{margin-top:34px;padding-top:24px;border-top:1px solid var(--line-strong);font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:var(--muted);line-height:2.1}
+.terms b{color:var(--amber-ink);font-weight:500}
+
+/* ── STACK ──────────────────────────────────────────────── */
+.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-strong);margin-top:clamp(40px,5vw,56px);border:1px solid var(--line-strong)}
+.stack section{background:var(--plate);padding:26px 26px 30px}
+.stack h4{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:14px;font-weight:600}
+.stack p{font-size:.95rem;color:var(--muted);line-height:1.8}
+
+/* ── CREDENTIALS ────────────────────────────────────────── */
+.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(28px,4vw,64px);margin-top:clamp(40px,5vw,56px)}
+.cert{display:flex;justify-content:space-between;gap:18px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.cert p{font-size:.97rem;color:var(--text)}
+.cert p i{display:block;font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin-top:4px}
+.cert time{font-family:var(--mono);font-size:12px;color:var(--amber-ink);flex:none}
+
+/* ── REFERENCES ─────────────────────────────────────────── */
+.words{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,40px);margin-top:clamp(40px,5vw,56px)}
+.word{border-top:2px solid var(--amber);padding-top:22px}
+.word blockquote{font-size:1rem;line-height:1.72;color:var(--text)}
+.word footer{margin-top:20px;font-family:var(--mono);font-size:11px;letter-spacing:.05em;line-height:1.9;color:var(--muted-2)}
+.word footer b{display:block;color:var(--text);font-weight:600;letter-spacing:.09em;text-transform:uppercase;font-size:10.5px}
+.tag{display:inline-block;margin-left:8px;border:1px solid var(--line-strong);padding:1px 6px;font-size:9px;letter-spacing:.1em;color:var(--amber-ink)}
+
+/* ── CONTACT ────────────────────────────────────────────── */
+.contact h2{max-width:20ch}
+.lines{margin-top:clamp(40px,5vw,54px);border-top:1px solid var(--line-strong)}
+.line{display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+.line dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted-2)}
+.line dd{font-size:1.05rem;color:var(--text)}
+.line dd a{border-bottom:1px solid var(--amber);transition:color .2s ease}
+.line dd a:hover{color:var(--amber-ink)}
+
+footer.site{padding:26px 0;background:var(--gutter);border-top:1px solid var(--line)}
+footer.site .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+footer.site p{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+footer.site a:hover{color:var(--amber)}
+
+/* ── MOTION ─────────────────────────────────────────────── */
+.rise{opacity:0;transform:translateY(20px)}
+.rise.in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.lift{opacity:0;transform:translateY(26px);animation:lift .9s cubic-bezier(.22,.61,.36,1) forwards}
+@keyframes lift{to{opacity:1;transform:none}}
+.d1{animation-delay:.05s}.d2{animation-delay:.16s}.d3{animation-delay:.28s}.d4{animation-delay:.4s}.d5{animation-delay:.5s}.d6{animation-delay:.6s}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rise,.lift{opacity:1;transform:none}
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width:1080px){
+  .case{grid-template-columns:170px 1fr;grid-template-areas:'meta body' 'meta outs'}
+  .case__meta{grid-area:meta}
+  .case__body{grid-area:body}
+  .outs{grid-area:outs;margin-top:22px}
+  .stack{grid-template-columns:repeat(2,1fr)}
+  .words{grid-template-columns:1fr;gap:34px}
+  .word{max-width:66ch}
+}
+@media (max-width:860px){
+  body{font-size:16px}
+  .rail{display:none}
+  .topbar{display:flex}
+  .page{margin-left:0;padding-top:54px}
+  section[id]{scroll-margin-top:66px}
+  .readout{grid-template-columns:repeat(2,1fr)}
+  .readout div{border-bottom:1px solid var(--line);padding-bottom:20px}
+  .readout div:nth-child(2n){border-right:0}
+  .svc,.certs,.stack{grid-template-columns:1fr}
+  .case{grid-template-columns:1fr;grid-template-areas:'meta' 'body' 'outs';gap:14px}
+  .line{grid-template-columns:1fr;gap:6px}
+  .certs{gap:0}
+}
+</style>
+</head>
+<body>
+
+<svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-infinity" viewBox="0 0 24 24"><path d="M6.6 8.6c-2 0-3.6 1.5-3.6 3.4s1.6 3.4 3.6 3.4c3 0 4.8-6.8 7.8-6.8 2 0 3.6 1.5 3.6 3.4s-1.6 3.4-3.6 3.4c-3 0-4.8-6.8-7.8-6.8Z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3 20 7.5 12 12 4 7.5 12 3Z"/><path d="M4 12.2 12 16.7l8-4.5"/><path d="M4 16.7 12 21.2l8-4.5"/></symbol>
+  <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M2.5 12h4l2.6-7 4 15.5L15.7 12h5.8"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.4 19H7.3a4.3 4.3 0 0 1-.6-8.55A6 6 0 0 1 18.2 11.1a4 4 0 0 1-.8 7.9Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.8 19 5.7v5.6c0 4.4-2.9 8.3-7 9.9-4.1-1.6-7-5.5-7-9.9V5.7l7-2.9Z"/><path d="M9 12l2.1 2.1L15.2 10"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2.8 20.2 7v10L12 21.2 3.8 17V7L12 2.8Z"/><path d="M3.8 7 12 11.5 20.2 7"/><path d="M12 11.5v9.7"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8.4 17.5 3 12l5.4-5.5"/><path d="M15.6 6.5 21 12l-5.4 5.5"/><path d="M13.4 4.2 10.6 19.8"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24"><circle cx="6.5" cy="5.5" r="2.3"/><circle cx="6.5" cy="18.5" r="2.3"/><circle cx="17.5" cy="9" r="2.3"/><path d="M6.5 7.8v8.4"/><path d="M17.5 11.3c0 3.2-2.6 4.6-5.5 5.1"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M6.8 20.5V12"/><path d="M12 20.5V4.8"/><path d="M17.2 20.5v-5.8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.3" width="15" height="10.2" rx="1.6"/><path d="M8.2 10.3V7.6a3.8 3.8 0 0 1 7.6 0v2.7"/></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7.5" ry="3.2"/><path d="M4.5 6v12c0 1.8 3.4 3.2 7.5 3.2s7.5-1.4 7.5-3.2V6"/><path d="M4.5 12c0 1.8 3.4 3.2 7.5 3.2s7.5-1.4 7.5-3.2"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6.8" y="6.8" width="10.4" height="10.4" rx="1.4"/><rect x="9.9" y="9.9" width="4.2" height="4.2" rx=".8"/><path d="M10 3.2v3.6M14 3.2v3.6M10 17.2v3.6M14 17.2v3.6M3.2 10h3.6M3.2 14h3.6M17.2 10h3.6M17.2 14h3.6"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="2.8" y="4.5" width="18.4" height="15" rx="1.6"/><path d="M7 9.5l3 2.8-3 2.8"/><path d="M12.5 15.3h4.5"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.4A8.6 8.6 0 0 1 9.6 3.5a8.6 8.6 0 1 0 10.9 10.9Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.3M12 19.2v2.3M2.5 12h2.3M19.2 12h2.3M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<aside class="rail" aria-label="Section navigation">
+  <a href="#top" class="rail__mark" aria-label="Back to top">YB</a>
+  <div class="rail__status"><i class="dot" aria-hidden="true"></i><span>Available</span></div>
+  <nav class="rail__nav">
+    <a class="rail__link" href="#work" data-spy="work"><i aria-hidden="true"></i><span>Work</span></a>
+    <a class="rail__link" href="#services" data-spy="services"><i aria-hidden="true"></i><span>Services</span></a>
+    <a class="rail__link" href="#stack" data-spy="stack"><i aria-hidden="true"></i><span>Stack</span></a>
+    <a class="rail__link" href="#credentials" data-spy="credentials"><i aria-hidden="true"></i><span>Certs</span></a>
+    <a class="rail__link" href="#contact" data-spy="contact"><i aria-hidden="true"></i><span>Contact</span></a>
+  </nav>
+  <button class="tog" data-theme-toggle type="button" aria-label="Switch colour theme">
+    <svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+    <svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+  </button>
+  <p class="rail__block">Rabat<br>GMT+1<br>2026</p>
+</aside>
+
+<header class="topbar">
+  <a href="#top" class="topbar__mark">YB</a>
+  <div class="topbar__right">
+    <span class="topbar__status"><i class="dot" aria-hidden="true"></i> Available</span>
+    <button class="tog" data-theme-toggle type="button" aria-label="Switch colour theme">
+      <svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      <svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="page" id="top">
+<main id="main">
+
+  <!-- ── HERO ─────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="hero__kicker lift d1">Senior DevOps &amp; DevSecOps Engineer · Cloud Solutions Architect · SRE</p>
+      <h1 class="lift d2">Whatever you're shipping, I build the platform <span class="mark">underneath</span> it.</h1>
+      <p class="hero__sub lift d3">
+        <b>Yahia Mohamed Benabbou.</b> Four years designing, migrating, securing and operating
+        production infrastructure across
+        <b>AWS, Azure, Oracle Cloud</b> and on-premises estates — Kubernetes at fleet scale,
+        Terraform everywhere, CI/CD that ships daily, and the observability to prove any of it works.
+        Available for contract and consulting work, remote on European hours.
+      </p>
+
+      <ul class="roles lift d4">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-infinity"/></svg>Senior DevOps Engineer</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>Senior DevSecOps Engineer</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg>Cloud Solutions Architect</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-pulse"/></svg>Site Reliability Engineer</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-layers"/></svg>Platform Engineer</li>
+      </ul>
+
+      <div class="cta lift d5">
+        <a class="btn btn--amber" href="mailto:yahia.benabbou@nearvic.com?subject=Contract%20enquiry">Start a conversation</a>
+        <a class="btn btn--ghost" href="#work">See the work</a>
+      </div>
+
+      <div class="readout lift d6">
+        <div><b>99.9%</b><span>Service availability<br>across production estates</span></div>
+        <div><b>&minus;70%</b><span>Provisioning time<br>Terraform + Ansible</span></div>
+        <div><b>50+</b><span>Kubernetes clusters<br>under management</span></div>
+        <div><b>15+</b><span>Cloud &amp; platform<br>certifications</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WORK ─────────────────────────────────────────── -->
+  <section class="band band--plate" id="work">
+    <div class="wrap">
+      <p class="eyebrow rise">Selected work</p>
+      <h2 class="rise">Six systems I designed, migrated, or kept alive.</h2>
+      <p class="lede rise">Client names are withheld under NDA. Architecture, scope and outcomes are
+        available in detail on a call.</p>
+
+      <div class="work">
+        <article class="case rise">
+          <p class="case__meta"><em>Delivery platform</em>2026<br>CI/CD · Pipeline security</p>
+          <div class="case__body">
+            <h3>One CI/CD platform for thirty-plus microservices</h3>
+            <p class="desc">Replaced fragmented per-team pipelines with a centralised, templated delivery
+              platform. Security scanning, dependency checks and policy gates run on every build, so
+              problems surface at merge time rather than in a quarterly audit.</p>
+            <p class="case__tech">Azure DevOps · Jenkins · GitHub Actions · SAST/SCA · HashiCorp Vault · Helm</p>
+          </div>
+          <div class="outs">
+            <p class="out"><b>+60%</b><span>deployment frequency</span></p>
+            <p class="out"><b>&minus;80%</b><span>vulnerabilities reaching production</span></p>
+            <p class="out"><b>95%</b><span>findings remediated pre-production</span></p>
+          </div>
+        </article>
+
+        <article class="case rise">
+          <p class="case__meta"><em>Cloud build-out</em>2025<br>Bare metal · Sovereign</p>
+          <div class="case__body">
+            <h3>Morocco's first Compute Cloud@Customer deployment</h3>
+            <p class="desc">Delivered the country's first full-rack Oracle C3 installation alongside Oracle's
+              architects, then onboarded ten-plus organisations onto the platform — workloads that legally
+              could not leave national territory.</p>
+            <p class="case__tech">OCI Compute Cloud@Customer · Terraform · Ansible · OCI DevOps · GitHub Actions</p>
+          </div>
+          <div class="outs">
+            <p class="out"><b>10+</b><span>organisations onboarded</span></p>
+            <p class="out"><b>1st</b><span>C3 deployment in the country</span></p>
+            <p class="out"><b>100%</b><span>data residency maintained</span></p>
+          </div>
+        </article>
+
+        <article class="case rise">
+          <p class="case__meta"><em>Compute platform</em>2025<br>GPU · Kubernetes</p>
+          <div class="case__body">
+            <h3>GPU clusters for inference and compute-intensive workloads</h3>
+            <p class="desc">Built and tuned NVIDIA GPU environments on OCI for rendering, simulation and
+              large-model inference — autoscaling, network and topology tuning, and monitoring dashboards
+              that make expensive silicon accountable per workload.</p>
+            <p class="case__tech">OCI GPU shapes · NVIDIA · vLLM · Kubernetes · Terraform · OCI Monitoring</p>
+          </div>
+          <div class="outs">
+            <p class="out"><b>Scale</b><span>autoscaled multi-node GPU fleet</span></p>
+            <p class="out"><b>Cost</b><span>per-workload attribution and tuning</span></p>
+            <p class="out"><b>ISO</b><span>27001 / PCI DSS certified facility</span></p>
+          </div>
+        </article>
+
+        <article class="case rise">
+          <p class="case__meta"><em>Cloud migration</em>2024 &ndash; 2026<br>VMware exit · Landing zones</p>
+          <div class="case__body">
+            <h3>Core workloads off VMware, onto multi-cloud</h3>
+            <p class="desc">Led migration of core applications from on-premises VMware estates to OCI and
+              AWS. Designed the landing zones, network topology and cutover runbooks, then ran the
+              cutovers — in environments where an outage is a regulatory event.</p>
+            <p class="case__tech">OCI · AWS · VMware · Terraform · Ansible · OKE</p>
+          </div>
+          <div class="outs">
+            <p class="out"><b>&minus;35%</b><span>infrastructure cost after migration</span></p>
+            <p class="out"><b>99.9%</b><span>availability held through cutover</span></p>
+            <p class="out"><b>0</b><span>unplanned outages from migration</span></p>
+          </div>
+        </article>
+
+        <article class="case rise">
+          <p class="case__meta"><em>Platform engineering</em>2023 &ndash; 2026<br>Kubernetes · Observability</p>
+          <div class="case__body">
+            <h3>Kubernetes at fleet scale, with the observability to prove it</h3>
+            <p class="desc">Designed and ran a production Kubernetes platform spanning fifty-plus clusters
+              with automated lifecycle management, golden-path Helm charts and a shared observability stack.
+              Teams ship to it without filing a ticket.</p>
+            <p class="case__tech">Kubernetes · Helm · Istio · Prometheus · Grafana · Loki · ELK</p>
+          </div>
+          <div class="outs">
+            <p class="out"><b>50+</b><span>clusters, automated lifecycle</span></p>
+            <p class="out"><b>SOC 2</b><span>controls implemented and evidenced</span></p>
+            <p class="out"><b>&minus;70%</b><span>request to running environment</span></p>
+          </div>
+        </article>
+
+        <article class="case rise">
+          <p class="case__meta"><em>Product engineering</em>2022 &ndash; 2024<br>Full-stack · AWS</p>
+          <div class="case__body">
+            <h3>Full-stack product work, then the pipelines to ship it</h3>
+            <p class="desc">Built and maintained cloud-native applications in Node.js, React and Next.js for
+              a London product team, then took over delivery: CI/CD, AWS infrastructure and automated
+              testing. The reason my platform work lands with developers instead of at them.</p>
+            <p class="case__tech">Node.js · React · Next.js · GitLab CI · AWS (EC2, S3, RDS) · MySQL</p>
+          </div>
+          <div class="outs">
+            <p class="out"><b>+25%</b><span>application performance</span></p>
+            <p class="out"><b>CI/CD</b><span>introduced from scratch</span></p>
+            <p class="out"><b>SAST</b><span>and dependency scanning in-pipeline</span></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ─────────────────────────────────────── -->
+  <section class="band" id="services">
+    <div class="wrap">
+      <p class="eyebrow rise">How I work with clients</p>
+      <h2 class="rise">Four things I get hired to do.</h2>
+      <p class="lede rise">I take engagements where the infrastructure has to keep working while it changes.
+        Discovery call first, written scope second, no exceptions.</p>
+
+      <div class="svc rise">
+        <article>
+          <h3><i><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg>Migration &amp; landing zones</i>Get onto cloud without a bad quarter</h3>
+          <p>Assessment, target architecture and execution for moves from on-premises or VMware onto
+            AWS, Azure or OCI. Multi-account structure, network design, identity baseline, cost guardrails,
+            and a cutover plan you can hand to an auditor.</p>
+          <ul><li>Landing zone</li><li>VMware exit</li><li>Cutover runbooks</li><li>Cost guardrails</li></ul>
+        </article>
+        <article>
+          <h3><i><svg class="ico" aria-hidden="true"><use href="#i-layers"/></svg>Platform &amp; Kubernetes</i>Give your engineers a paved road</h3>
+          <p>Production-grade clusters, GitOps delivery, reusable Terraform modules and an internal
+            developer platform, so teams provision what they need themselves with the guardrails already
+            baked in.</p>
+          <ul><li>EKS · AKS · OKE</li><li>GitOps</li><li>Helm golden paths</li><li>Autoscaling</li></ul>
+        </article>
+        <article>
+          <h3><i><svg class="ico" aria-hidden="true"><use href="#i-pulse"/></svg>Reliability engineering</i>Make the pager quieter</h3>
+          <p>SLIs, SLOs and error budgets that mean something. Observability across logs, metrics and
+            traces. Incident response, blameless postmortems, capacity planning and tested disaster
+            recovery — not a DR document nobody has opened.</p>
+          <ul><li>SLO design</li><li>Prometheus · Grafana</li><li>Incident response</li><li>DR testing</li></ul>
+        </article>
+        <article>
+          <h3><i><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>DevSecOps</i>Move security left, for real</h3>
+          <p>Security gates inside the pipeline instead of bolted on after: IaC scanning, container and
+            dependency analysis, secrets management, policy-as-code, and a remediation workflow
+            engineering teams will actually follow.</p>
+          <ul><li>Pipeline gates</li><li>IaC scanning</li><li>Vault · KMS</li><li>Policy-as-code</li></ul>
+        </article>
+      </div>
+
+      <p class="terms rise">
+        <b>Engagement models</b> &nbsp;&mdash;&nbsp; 4–12 week delivery projects &nbsp;·&nbsp;
+        fractional platform lead, 2–3 days per week &nbsp;·&nbsp; architecture review and advisory retainer<br>
+        <b>Working hours</b> &nbsp;&mdash;&nbsp; Rabat, GMT+1. Full overlap with European teams, morning overlap with US East.<br>
+        <b>Languages</b> &nbsp;&mdash;&nbsp; English · French · Arabic &nbsp;·&nbsp; on-site across EMEA on request.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── STACK ────────────────────────────────────────── -->
+  <section class="band band--plate" id="stack">
+    <div class="wrap">
+      <p class="eyebrow rise">Technologies I work with</p>
+      <h2 class="rise">Tools I have run in production, not just read about.</h2>
+
+      <div class="stack rise">
+        <section>
+          <h4><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg>Cloud platforms</h4>
+          <p>AWS (EC2, EKS, Lambda, RDS, Aurora, DynamoDB, S3, VPC, IAM, CloudWatch, Step Functions) ·
+             Azure (VMs, AKS, Storage, Monitor, Azure DevOps) · Oracle Cloud Infrastructure ·
+             Compute Cloud@Customer · GCP</p>
+        </section>
+        <section>
+          <h4><svg class="ico" aria-hidden="true"><use href="#i-cube"/></svg>Containers &amp; orchestration</h4>
+          <p>Kubernetes · Docker · EKS · AKS · OKE · ECS · Fargate · OpenShift · Rancher ·
+             Helm · Istio · microservices architecture</p>
+        </section>
+        <section>
+          <h4><svg class="ico" aria-hidden="true"><use href="#i-code"/></svg>Infrastructure as code</h4>
+          <p>Terraform (modules, remote state, multi-environment) · Ansible · AWS CloudFormation ·
+             AWS CDK · immutable infrastructure · configuration drift elimination</p>
+        </section>
+        <section>
+          <h4><svg class="ico" aria-hidden="true"><use href="#i-branch"/></svg>CI/CD &amp; delivery</h4>
+          <p>Azure Pipelines · Jenkins · GitHub Actions · GitLab CI · OCI DevOps ·
+             GitFlow · progressive delivery · deployment automation</p>
+        </section>
+        <section>
+          <h4><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg>Observability</h4>
+          <p>Prometheus · Grafana · Loki · ELK and Elasticsearch · Kibana · CloudWatch ·
+             AWS X-Ray · OpenSearch · Azure Monitor · SLI and SLO instrumentation</p>
+        </section>
+        <section>
+          <h4><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg>Security &amp; networking</h4>
+          <p>IAM and least privilege · HashiCorp Vault · AWS KMS and Secrets Manager ·
+             Zero Trust principles · vulnerability scanning · VPC design · ALB and NLB ·
+             NGINX · HAProxy · security groups and NACLs</p>
+        </section>
+        <section>
+          <h4><svg class="ico" aria-hidden="true"><use href="#i-db"/></svg>Data &amp; streaming</h4>
+          <p>Kafka and event-driven architecture · RDS (MySQL, PostgreSQL) · Aurora ·
+             DynamoDB · MongoDB · Redis · S3 and Azure Blob · high-throughput ingestion pipelines</p>
+        </section>
+        <section>
+          <h4><svg class="ico" aria-hidden="true"><use href="#i-cpu"/></svg>Compute &amp; virtualisation</h4>
+          <p>VMware and on-premises estates · KVM · NVIDIA GPU shapes · HPC and bare metal ·
+             capacity planning · hybrid connectivity · datacenter operations</p>
+        </section>
+        <section>
+          <h4><svg class="ico" aria-hidden="true"><use href="#i-terminal"/></svg>Languages &amp; practice</h4>
+          <p>Python · Bash · JavaScript and Node.js · Java · React and Next.js ·
+             Site Reliability Engineering · Agile and Scrum · Jira and Confluence ·
+             architecture documentation and runbooks</p>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CREDENTIALS ──────────────────────────────────── -->
+  <section class="band" id="credentials">
+    <div class="wrap">
+      <p class="eyebrow rise">Credentials</p>
+      <h2 class="rise">Fifteen-plus certifications across four clouds.</h2>
+      <p class="lede rise">Engineering degree in Networks, Systems and Programmable Services —
+        École Nationale des Sciences Appliquées, Marrakech.</p>
+
+      <div class="certs rise">
+        <div class="cert"><p>AWS Certified DevOps Engineer <i>Professional · Amazon Web Services</i></p><time>2025</time></div>
+        <div class="cert"><p>AWS Certified Solutions Architect <i>Associate · Amazon Web Services</i></p><time>2025</time></div>
+        <div class="cert"><p>AWS Certified Developer <i>Associate · Amazon Web Services</i></p><time>2025</time></div>
+        <div class="cert"><p>Certified Kubernetes Administrator (CKA) <i>Linux Foundation · CNCF</i></p><time>2025</time></div>
+        <div class="cert"><p>Kubernetes &amp; Cloud Native Associate (KCNA) <i>Linux Foundation · CNCF</i></p><time>2025</time></div>
+        <div class="cert"><p>HashiCorp Certified: Terraform Associate <i>003 · HashiCorp</i></p><time>2025</time></div>
+        <div class="cert"><p>Azure Network Engineer <i>Associate · Microsoft</i></p><time>2025</time></div>
+        <div class="cert"><p>OCI Security Professional <i>Oracle</i></p><time>2025</time></div>
+        <div class="cert"><p>OCI Architect Professional <i>Oracle</i></p><time>2024</time></div>
+        <div class="cert"><p>OCI DevOps Professional <i>Oracle</i></p><time>2024</time></div>
+        <div class="cert"><p>OCI Operations Professional <i>Oracle</i></p><time>2024</time></div>
+        <div class="cert"><p>OCI Observability Professional <i>Oracle</i></p><time>2024</time></div>
+        <div class="cert"><p>OCI Foundations Associate &times;3 <i>Oracle</i></p><time>2023</time></div>
+        <div class="cert"><p>Oracle Cloud Data Management &amp; AI Foundations <i>Oracle</i></p><time>2023</time></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REFERENCES ───────────────────────────────────── -->
+  <section class="band band--plate" id="references">
+    <div class="wrap">
+      <p class="eyebrow rise">References</p>
+      <h2 class="rise">People who have shipped alongside me.</h2>
+
+      <div class="words rise">
+        <figure class="word">
+          <blockquote>"It has been a great pleasure working with Yahia. A great professional with
+            extraordinary technical skills."</blockquote>
+          <footer><b>Stéphane Guelfo</b>SVP Business Solutions — Cloud Transformation,<br>Sovereign Cloud, GPU &amp; AI Platforms</footer>
+        </figure>
+        <figure class="word">
+          <blockquote>"Yahia has an exceptional ability to get to the bottom of any problem his team
+            faces, whether technical or human. That is rare in one person, especially combined with how
+            business-oriented he is given his level of technical expertise."</blockquote>
+          <footer><b>Salwa El Ouattab</b>Cloud Security Engineer — AWS ×2, AZ-500, SC-100</footer>
+        </figure>
+        <figure class="word">
+          <blockquote>"J'ai collaboré avec Yahia dans un contexte exigeant où performance et réactivité
+            étaient essentielles. Son expertise dans le domaine du cloud et sa capacité à travailler
+            efficacement en équipe ont contribué de manière significative au succès de nos projets."</blockquote>
+          <footer><b>Soukaina Hilali<span class="tag">FR</span></b>IT Project Manager — PMP, PRINCE2 V7,<br>Scrum Master, COBIT 5, ITIL V3</footer>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ──────────────────────────────────────── -->
+  <section class="band contact" id="contact">
+    <div class="wrap">
+      <p class="eyebrow rise">Contact</p>
+      <h2 class="rise">Tell me what is breaking, or what you are about to build.</h2>
+      <p class="lede rise">I reply to every serious enquiry within one working day. If your problem is
+        outside what I do well, I will say so and point you somewhere better.</p>
+
+      <dl class="lines rise">
+        <div class="line"><dt>Email</dt><dd><a href="mailto:yahia.benabbou@nearvic.com">yahia.benabbou@nearvic.com</a></dd></div>
+        <div class="line"><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/yahia-mohamed-benabbou" target="_blank" rel="noopener">linkedin.com/in/yahia-mohamed-benabbou</a></dd></div>
+        <div class="line"><dt>Phone</dt><dd><a href="tel:+212650252742">+212 650 252 742</a></dd></div>
+        <div class="line"><dt>Based in</dt><dd>Rabat, Morocco &nbsp;·&nbsp; GMT+1 &nbsp;·&nbsp; remote-first, EMEA on-site on request</dd></div>
+        <div class="line"><dt>Status</dt><dd>Taking on contract and consulting engagements</dd></div>
+      </dl>
+
+      <div class="cta rise">
+        <a class="btn btn--amber" href="mailto:yahia.benabbou@nearvic.com?subject=Contract%20enquiry">Email me</a>
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/yahia-mohamed-benabbou" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>Yahia Mohamed Benabbou — Senior DevOps &amp; DevSecOps Engineer</p>
+    <p><a href="https://profile.nearvic.com">profile.nearvic.com</a> · Rabat · GMT+1</p>
+  </div>
+</footer>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Theme: light by default, dark on request. Held in memory for
+     this visit — see the deployment note for adding persistence. */
+  var toggles = document.querySelectorAll('[data-theme-toggle]');
+  function setTheme(next){
+    root.setAttribute('data-theme', next);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', next === 'dark' ? '#070A1C' : '#F4F5FA');
+    toggles.forEach(function(b){
+      b.setAttribute('aria-label', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    });
+  }
+  setTheme('light');
+  toggles.forEach(function(b){
+    b.addEventListener('click', function(){
+      setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+  });
+
+  /* Reveal on scroll */
+  var rises = document.querySelectorAll('.rise');
+  if (reduce || !('IntersectionObserver' in window)) {
+    rises.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    rises.forEach(function(el){ io.observe(el); });
+  }
+
+  /* Gutter scroll-spy */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail__link'));
+  var targets = links.map(function(l){ return document.getElementById(l.dataset.spy); }).filter(Boolean);
+  if ('IntersectionObserver' in window && targets.length) {
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        links.forEach(function(l){ l.classList.toggle('is-live', l.dataset.spy === e.target.id); });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    targets.forEach(function(t){ spy.observe(t); });
+  }
+})();
+</script>
+</body>
+</html>
