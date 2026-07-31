@@ -28,6 +28,15 @@ personality.
 - **Security is present-tense but not overclaimed.** DevSecOps is a service line and a role,
   backed by real pipeline-security work. CKS / AWS Security Specialty are not held yet, so
   the page must not imply they are.
+- **Held and unheld certifications never mix.** The `#credentials` section carries two lists:
+  `.certs` (held, solid rules, amber year) and `.road` (in preparation, dashed rules, muted
+  status, panel background, explicit "not yet held" label). Never move an entry up to `.certs`
+  before it is actually earned, and never drop the disclaimer paragraph. The career strategy
+  doc advises leading with the "Cloud Security Architect" title *now* — that advice is
+  deliberately not followed here, because the page's value is that every claim survives checking.
+- **The engagement section states terms, not credentials.** `#engagement` describes how work is
+  scoped, how access is granted, and how it is handed over. It must not claim a legal entity,
+  professional insurance, or invoicing capability that does not exist yet (see open items).
 - **No client names.** All engagements are "withheld under NDA". Do not add employer or
   client names without explicit confirmation.
 - **Every metric on the page is real.** 99.9% availability, −70% provisioning time, 50+
@@ -79,9 +88,19 @@ under `prefers-reduced-motion`. Keep it that way.
   and *OCI Architect*. The page uses the conservative version. Confirm which is correct.
 - **Theme choice does not persist** across reloads — it's in-memory only. Add
   `localStorage.getItem/setItem('theme', ...)` around `setTheme()` in the inline script.
-- **Nearvic entity status unresolved.** If Nearvic is a registered company Yahia contracts
-  through, the contact block should carry a company line and some copy should shift to "we" —
-  procurement at larger European and Gulf clients often can't onboard individuals.
+- **Nearvic is not a registered entity — it is a domain only** (confirmed Jul 2026). The page
+  therefore stays first-person throughout and makes no company claim. This is the single biggest
+  commercial blocker: procurement at larger European and Gulf clients frequently cannot onboard an
+  individual, only a supplier. Until an entity exists, `#engagement` offers contracting "through
+  your existing contractor-management or employer-of-record provider" as the honest workaround.
+  When a Moroccan auto-entrepreneur registration or SARL AU exists, add: company line in the
+  contact block, invoicing currency, and professional liability insurance (RC Professionnelle) —
+  each of those is a trust signal the page currently cannot make.
+- **Certification roadmap entries need confirming.** The four entries in `.road` (CKS, AWS Security
+  Specialty, AWS SA Professional, CCSP) were taken from the 2026–2028 career strategy document,
+  not from Yahia directly. The strategy assumed a March 2026 start with CKS earned by June 2026;
+  that has not happened. Confirm which are genuinely in progress versus planned, and consider
+  adding target quarters, before treating this list as accurate.
 - References are quoted from LinkedIn recommendations. Confirm permission before launch.
 
 ## Deployment

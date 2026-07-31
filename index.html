@@ -215,8 +215,6 @@ h1{
 .svc p{margin-top:14px;color:var(--muted);font-size:.97rem}
 .svc ul{margin-top:18px;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
 .svc li{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted-2);border:1px solid var(--line);padding:5px 10px}
-.terms{margin-top:34px;padding-top:24px;border-top:1px solid var(--line-strong);font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:var(--muted);line-height:2.1}
-.terms b{color:var(--amber-ink);font-weight:500}
 
 /* ── STACK ──────────────────────────────────────────────── */
 .stack{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-strong);margin-top:clamp(40px,5vw,56px);border:1px solid var(--line-strong)}
@@ -230,6 +228,25 @@ h1{
 .cert p{font-size:.97rem;color:var(--text)}
 .cert p i{display:block;font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin-top:4px}
 .cert time{font-family:var(--mono);font-size:12px;color:var(--amber-ink);flex:none}
+
+/* Roadmap: not-yet-held credentials. Dashed rules and a muted date
+   column keep these visually separable from the held list above —
+   the distinction is the whole point of showing them. */
+.road{margin-top:clamp(36px,4.5vw,52px);background:var(--plate);border:1px solid var(--line-strong);padding:clamp(24px,3vw,34px)}
+.road h4{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--amber-ink);font-weight:600}
+.road ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(28px,4vw,64px);margin-top:20px}
+.road li{display:flex;justify-content:space-between;gap:18px;align-items:baseline;padding:13px 0;border-bottom:1px dashed var(--line-strong)}
+.road li p{font-size:.97rem;color:var(--text)}
+.road li p i{display:block;font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin-top:4px}
+.road li span{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted-2);flex:none}
+.road>p{margin-top:22px;font-size:.93rem;color:var(--muted);max-width:72ch}
+
+/* ── ENGAGEMENT ─────────────────────────────────────────── */
+.eng{margin-top:clamp(40px,5vw,56px);border-top:1px solid var(--line-strong);display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(28px,4vw,64px)}
+.eng>div{padding:24px 0;border-bottom:1px solid var(--line)}
+.eng dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:11px}
+.eng dd{font-size:.97rem;color:var(--muted);line-height:1.75;max-width:54ch}
+.eng dd b{color:var(--text);font-weight:600}
 
 /* ── REFERENCES ─────────────────────────────────────────── */
 .words{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,40px);margin-top:clamp(40px,5vw,56px)}
@@ -285,7 +302,7 @@ footer.site a:hover{color:var(--amber)}
   .readout{grid-template-columns:repeat(2,1fr)}
   .readout div{border-bottom:1px solid var(--line);padding-bottom:20px}
   .readout div:nth-child(2n){border-right:0}
-  .svc,.certs,.stack{grid-template-columns:1fr}
+  .svc,.certs,.stack,.eng,.road ul{grid-template-columns:1fr}
   .case{grid-template-columns:1fr;grid-template-areas:'meta' 'body' 'outs';gap:14px}
   .line{grid-template-columns:1fr;gap:6px}
   .certs{gap:0}
@@ -322,6 +339,7 @@ footer.site a:hover{color:var(--amber)}
     <a class="rail__link" href="#services" data-spy="services"><i aria-hidden="true"></i><span>Services</span></a>
     <a class="rail__link" href="#stack" data-spy="stack"><i aria-hidden="true"></i><span>Stack</span></a>
     <a class="rail__link" href="#credentials" data-spy="credentials"><i aria-hidden="true"></i><span>Certs</span></a>
+    <a class="rail__link" href="#engagement" data-spy="engagement"><i aria-hidden="true"></i><span>Engage</span></a>
     <a class="rail__link" href="#contact" data-spy="contact"><i aria-hidden="true"></i><span>Contact</span></a>
   </nav>
   <button class="tog" data-theme-toggle type="button" aria-label="Switch colour theme">
@@ -526,13 +544,6 @@ footer.site a:hover{color:var(--amber)}
           <ul><li>Pipeline gates</li><li>IaC scanning</li><li>Vault · KMS</li><li>Policy-as-code</li></ul>
         </article>
       </div>
-
-      <p class="terms rise">
-        <b>Engagement models</b> &nbsp;&mdash;&nbsp; 4–12 week delivery projects &nbsp;·&nbsp;
-        fractional platform lead, 2–3 days per week &nbsp;·&nbsp; architecture review and advisory retainer<br>
-        <b>Working hours</b> &nbsp;&mdash;&nbsp; Rabat, GMT+1. Full overlap with European teams, morning overlap with US East.<br>
-        <b>Languages</b> &nbsp;&mdash;&nbsp; English · French · Arabic &nbsp;·&nbsp; on-site across EMEA on request.
-      </p>
     </div>
   </section>
 
@@ -619,6 +630,19 @@ footer.site a:hover{color:var(--amber)}
         <div class="cert"><p>OCI Foundations Associate &times;3 <i>Oracle</i></p><time>2023</time></div>
         <div class="cert"><p>Oracle Cloud Data Management &amp; AI Foundations <i>Oracle</i></p><time>2023</time></div>
       </div>
+
+      <div class="road rise">
+        <h4><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>In preparation &mdash; not yet held</h4>
+        <ul>
+          <li><p>Certified Kubernetes Security Specialist (CKS) <i>Linux Foundation &middot; CNCF</i></p><span>In progress</span></li>
+          <li><p>AWS Certified Security <i>Specialty &middot; Amazon Web Services</i></p><span>In progress</span></li>
+          <li><p>AWS Certified Solutions Architect <i>Professional &middot; Amazon Web Services</i></p><span>Planned</span></li>
+          <li><p>Certified Cloud Security Professional (CCSP) <i>ISC2</i></p><span>Planned</span></li>
+        </ul>
+        <p>These are on the roadmap, not on the wall. They are listed so you know where the practice
+          is heading &mdash; and so nothing above this line is ever in doubt. Every certification in
+          the list above is held today and can be verified on request.</p>
+      </div>
     </div>
   </section>
 
@@ -650,8 +674,61 @@ footer.site a:hover{color:var(--amber)}
     </div>
   </section>
 
+  <!-- ── ENGAGEMENT ───────────────────────────────────── -->
+  <section class="band" id="engagement">
+    <div class="wrap">
+      <p class="eyebrow rise">Engagement</p>
+      <h2 class="rise">How the work is scoped, run and handed back.</h2>
+      <p class="lede rise">Infrastructure work fails on process more often than on technology.
+        These are the terms I work under, before anyone writes a line of Terraform.</p>
+
+      <dl class="eng rise">
+        <div>
+          <dt>Engagement models</dt>
+          <dd>4–12 week delivery projects &nbsp;·&nbsp; fractional platform lead, 2–3 days per week
+            &nbsp;·&nbsp; architecture review and advisory retainer.</dd>
+        </div>
+        <div>
+          <dt>How it starts</dt>
+          <dd>Discovery call, then a <b>written scope</b> — deliverables, milestones, and a fixed
+            price or day rate — agreed before work begins. No scope, no start.</dd>
+        </div>
+        <div>
+          <dt>Access &amp; least privilege</dt>
+          <dd>I work inside <b>your</b> tenancy and <b>your</b> repositories, using scoped,
+            time-bound credentials you issue and can revoke at any moment. Production data stays in
+            your environment. No credentials retained after handover.</dd>
+        </div>
+        <div>
+          <dt>Confidentiality</dt>
+          <dd>Your NDA is signed before technical discovery. Every client on this page is withheld
+            under NDA — you get the same treatment, permanently.</dd>
+        </div>
+        <div>
+          <dt>Handover</dt>
+          <dd>Every engagement ends with runbooks, architecture decision records and a live handover
+            session. If your team cannot operate it without me, the work is not finished.</dd>
+        </div>
+        <div>
+          <dt>Contracting</dt>
+          <dd>Direct engagement, or through your existing contractor-management or employer-of-record
+            provider where procurement requires it.</dd>
+        </div>
+        <div>
+          <dt>Working hours</dt>
+          <dd>Rabat, GMT+1. Full overlap with European teams, morning overlap with US East.
+            On-site across EMEA on request.</dd>
+        </div>
+        <div>
+          <dt>Languages</dt>
+          <dd>English &nbsp;·&nbsp; French &nbsp;·&nbsp; Arabic.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
   <!-- ── CONTACT ──────────────────────────────────────── -->
-  <section class="band contact" id="contact">
+  <section class="band band--plate contact" id="contact">
     <div class="wrap">
       <p class="eyebrow rise">Contact</p>
       <h2 class="rise">Tell me what is breaking, or what you are about to build.</h2>
