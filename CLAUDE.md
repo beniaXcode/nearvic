@@ -45,15 +45,25 @@ personality.
 
 ## Design system
 
-Derived from `#191970` (midnight blue), the colour already used across Yahia's LaTeX
-resume. Amber phosphor `#FFB020` is the **only** accent — the sysadmin CRT colour and the
-"needs attention" state in monitoring stacks. Do not introduce a second accent hue.
+Neutral cool graphite with **operational green** `#00B368` as the single accent — the colour a
+dashboard shows when the system is up and the pager is quiet. That is precisely the claim this
+page makes (99.9% availability, zero unplanned outages), so it is the colour the page is written
+in. Do not introduce a second accent hue.
+
+The previous palette was midnight blue `#191970` with amber `#FFB020`. It was replaced in Jul 2026
+because amber is the *degraded / needs-attention* state in every monitoring stack — the accent was
+quietly arguing against the reliability message. **Note the side effect:** the page no longer
+matches the `#191970` used in Yahia's LaTeX resume. Either restyle the resume to match or accept
+the divergence, but don't "fix" the site back without deciding that consciously.
 
 - **Light is the default theme.** Dark is a toggle. Both live in CSS custom properties on
   `:root` and `[data-theme="dark"]`. Add new colours as tokens in both blocks, never as
   hardcoded hex in a rule.
-- `--amber` is for fills, dots and rules. `--amber-ink` is the *readable* amber for text and
-  changes per theme (`#9E5D00` light, `#FFB020` dark). Use the right one or contrast breaks.
+- `--signal` is for fills, dots and rules. `--signal-ink` is the *readable* green for text and
+  changes per theme (`#00674A` light, `#2FDE93` dark). Use the right one or contrast breaks.
+- Every foreground/background pair that actually renders clears WCAG AA (4.5:1) in both themes.
+  If you change a token, re-check it — `--muted-2` on `--plate` is the tightest pair and has
+  very little headroom.
 - The dark **left gutter rail** is the signature element — a drafting-sheet gutter holding
   the monogram, availability status, scroll-spy nav, theme toggle and a title block. It stays
   dark in both themes; it's the identity anchor. On <860px it collapses to a top bar.
