@@ -220,8 +220,12 @@ h1{
 .svc li{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted-2);border:1px solid var(--line);padding:5px 10px}
 
 /* ── STACK ──────────────────────────────────────────────── */
-.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-strong);margin-top:clamp(40px,5vw,56px);border:1px solid var(--line-strong)}
-.stack section{background:var(--plate);padding:26px 26px 30px}
+/* Grid rules are drawn as a 1px ring on each card rather than by letting a
+   container background show through the 1px gaps. Same result, but a row
+   that does not divide evenly leaves plate-coloured space instead of a
+   solid block of rule colour — so the card count can change freely. */
+.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--plate);margin-top:clamp(40px,5vw,56px);border:1px solid var(--line-strong)}
+.stack section{background:var(--plate);padding:26px 26px 30px;box-shadow:0 0 0 1px var(--line-strong)}
 .stack h4{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--signal-ink);margin-bottom:14px;font-weight:600}
 .stack p{font-size:.95rem;color:var(--muted);line-height:1.8}
 
@@ -598,12 +602,6 @@ footer.site a:hover{color:var(--signal)}
           <h4><svg class="ico" aria-hidden="true"><use href="#i-cpu"/></svg>Compute &amp; virtualisation</h4>
           <p>VMware and on-premises estates · KVM · NVIDIA GPU shapes · HPC and bare metal ·
              capacity planning · hybrid connectivity · datacenter operations</p>
-        </section>
-        <section>
-          <h4><svg class="ico" aria-hidden="true"><use href="#i-terminal"/></svg>Languages &amp; practice</h4>
-          <p>Python · Bash · JavaScript and Node.js · Java · React and Next.js ·
-             Site Reliability Engineering · Agile and Scrum · Jira and Confluence ·
-             architecture documentation and runbooks</p>
         </section>
       </div>
     </div>
