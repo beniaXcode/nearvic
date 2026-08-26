@@ -20,7 +20,8 @@ personality.
 ## Positioning decisions (don't silently reverse these)
 
 - **Roles over industries.** The hero lists roles Yahia takes (Senior DevOps Engineer,
-  Senior DevSecOps Engineer, Cloud Solutions Architect, SRE, Platform Engineer), not a
+  Senior DevSecOps Engineer, Cloud Security Engineer, Cloud Solutions Architect, SRE,
+  Platform Engineer), not a
   client-sector list. A hiring manager should find their own job title in the first screen.
 - **No single-industry framing.** An earlier draft led with banking; it was too narrow.
   Work spans delivery platforms, sovereign cloud, GPU compute, migration, platform
@@ -29,7 +30,7 @@ personality.
   backed by real pipeline-security work. CKS / AWS Security Specialty are not held yet, so
   the page must not imply they are.
 - **Held and unheld certifications never mix.** The `#credentials` section carries two lists:
-  `.certs` (held, solid rules, amber year) and `.road` (in preparation, dashed rules, muted
+  `.certs` (held, solid rules, accent-green year) and `.road` (in preparation, dashed rules, muted
   status, panel background, explicit "not yet held" label). Never move an entry up to `.certs`
   before it is actually earned, and never drop the disclaimer paragraph. The career strategy
   doc advises leading with the "Cloud Security Architect" title *now* — that advice is
@@ -41,7 +42,7 @@ personality.
   client names without explicit confirmation.
 - **Every metric on the page is real.** 99.9% availability, −70% provisioning time, 50+
   clusters, +60% deploy frequency, −80% production vulnerabilities, 95% pre-prod
-  remediation, −35% cost, 15+ certifications. Never invent or round up a new one.
+  remediation, −35% cost, 18 certifications. Never invent or round up a new one.
 
 ## Design system
 
