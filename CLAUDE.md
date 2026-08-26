@@ -40,9 +40,16 @@ personality.
   professional insurance, or invoicing capability that does not exist yet (see open items).
 - **No client names.** All engagements are "withheld under NDA". Do not add employer or
   client names without explicit confirmation.
+- **`#security` re-cuts three engagements, it does not add new ones.** The three cases in
+  `#security` are the same engagements as `#work` cases 1, 4 and 6, described by the security
+  controls instead of the platform outcome. The lede says so explicitly and must keep saying so —
+  without it a reader double-counts the portfolio. Metrics are deliberately not repeated between
+  the two sections.
 - **Every metric on the page is real.** 99.9% availability, −70% provisioning time, 50+
   clusters, +60% deploy frequency, −80% production vulnerabilities, 95% pre-prod
-  remediation, −35% cost, 18 certifications. Never invent or round up a new one.
+  remediation, −35% cost, 18 certifications; and in `#security`: 500K+ daily transactions,
+  99.9% environment consistency, −45% production incidents, 30+ microservices, −50% onboarding
+  time, −60% MTTR. Never invent or round up a new one.
 
 ## Design system
 

@@ -135,6 +135,8 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(22px,4.4vw,64px)}
 .band{padding:clamp(74px,8.5vw,124px) 0;position:relative}
 .band--plate{background:var(--plate);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* #work and #security run together as one plate block — a single rule between them, not two */
+.band--plate + .band--plate{border-top:0}
 section[id]{scroll-margin-top:20px}
 
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--signal-ink);display:flex;align-items:center;gap:14px;margin-bottom:26px}
@@ -508,6 +510,77 @@ footer.site a:hover{color:var(--signal)}
             <p class="out"><b>+25%</b><span>application performance</span></p>
             <p class="out"><b>CI/CD</b><span>introduced from scratch</span></p>
             <p class="out"><b>SAST</b><span>and dependency scanning in-pipeline</span></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECURITY DETAIL ──────────────────────────────────
+       Not new engagements: three of the six above, re-cut by the
+       security controls actually built and operated in them. The
+       lede says so — a reader must never count these twice. -->
+  <section class="band band--plate" id="security">
+    <div class="wrap">
+      <p class="eyebrow rise">Security in practice</p>
+      <h2 class="rise">Three of those engagements, in security terms.</h2>
+      <p class="lede rise">The same systems, re-cut by the controls I built and ran inside them —
+        identity, secrets, service-to-service trust, and the gates standing in front of production.</p>
+
+      <div class="work">
+        <article class="case rise">
+          <p class="case__meta"><em>Identity &amp; zero trust</em>2024 &ndash; 2025<br>Banking · Multi-cloud</p>
+          <div class="case__body">
+            <h3>Zero-trust access and service identity for a banking platform</h3>
+            <p class="desc">Core banking applications moved to OCI and AWS, and the trust model moved
+              with them: identity-based access control instead of flat network trust, microsegmentation
+              between workloads, mutual TLS for east-west traffic through the service mesh, and Vault
+              as the single source for secrets, dynamic database credentials and certificate issuance.
+              Compliance checks run continuously against the regulatory baseline rather than the week
+              before an audit.</p>
+            <p class="case__tech">HashiCorp Vault · Istio mTLS · Kubernetes RBAC · microsegmentation · OCI Cloud Guard · AWS GuardDuty · Terraform · Ansible</p>
+          </div>
+          <div class="outs">
+            <p class="out"><b>500K+</b><span>daily transactions on the platform</span></p>
+            <p class="out"><b>99.9%</b><span>environment consistency, drift eliminated</span></p>
+            <p class="out"><b>mTLS</b><span>service-to-service by default</span></p>
+          </div>
+        </article>
+
+        <article class="case rise">
+          <p class="case__meta"><em>Pipeline &amp; container security</em>2026<br>DevSecOps · Kubernetes</p>
+          <div class="case__body">
+            <h3>Security gates on every build, and clusters that enforce them</h3>
+            <p class="desc">Centralised delivery for thirty-plus microservices with SAST, DAST,
+              dependency analysis, container scanning and secrets detection wired into every pipeline —
+              then the runtime half most teams skip: image scanning, admission control, network policies
+              and RBAC on the clusters receiving those artefacts. Findings route to the owning team with
+              severity thresholds attached, not into a quarterly spreadsheet.</p>
+            <p class="case__tech">SonarQube · Trivy · SAST/DAST/SCA · secrets detection · admission control · network policies · Kubernetes RBAC · GitHub Actions · ArgoCD · Helm · OpenShift</p>
+          </div>
+          <div class="outs">
+            <p class="out"><b>&minus;45%</b><span>production incidents</span></p>
+            <p class="out"><b>30+</b><span>microservices on one hardened path</span></p>
+            <p class="out"><b>&minus;50%</b><span>engineer onboarding time</span></p>
+          </div>
+        </article>
+
+        <article class="case rise">
+          <p class="case__meta"><em>Application security</em>2022 &ndash; 2024<br>AuthN / AuthZ · Node · Java</p>
+          <div class="case__body">
+            <h3>Authentication and authorisation inside the application</h3>
+            <p class="desc">A cloud-native SaaS platform in React, Node.js and Java microservices on
+              EKS, where the security work sat in the code rather than around it: token-based
+              authentication with OAuth 2.0 and OIDC, role-based authorisation enforced per service,
+              and the application-layer defences that get dropped under delivery pressure — input
+              validation and injection prevention, output encoding against XSS, and CSRF protection on
+              state-changing routes.</p>
+            <p class="case__tech">Node.js · Java · React · OAuth 2.0 · OIDC · bearer tokens · AWS EKS · GitLab CI · SAST</p>
+          </div>
+          <div class="outs">
+            <p class="out"><b>OAuth 2.0</b><span>and OIDC token-based auth</span></p>
+            <p class="out"><b>&minus;60%</b><span>mean time to resolution</span></p>
+            <p class="out"><b>AppSec</b><span>injection, XSS and CSRF defences</span></p>
           </div>
         </article>
       </div>
