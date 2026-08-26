@@ -548,8 +548,10 @@ footer.site a:hover{color:var(--signal)}
           <h3><i><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>DevSecOps</i>Move security left, for real</h3>
           <p>Security gates inside the pipeline instead of bolted on after: IaC scanning, container and
             dependency analysis, secrets management, policy-as-code, and a remediation workflow
-            engineering teams will actually follow.</p>
-          <ul><li>Pipeline gates</li><li>IaC scanning</li><li>Vault · KMS</li><li>Policy-as-code</li></ul>
+            engineering teams will actually follow. Application side too — authentication and
+            authorisation design, injection and XSS/CSRF prevention, and secure service-to-service
+            communication over TLS and mTLS.</p>
+          <ul><li>Pipeline gates</li><li>IaC scanning</li><li>AuthN / AuthZ</li><li>Vault · KMS</li><li>mTLS</li><li>Policy-as-code</li></ul>
         </article>
       </div>
     </div>
@@ -589,9 +591,16 @@ footer.site a:hover{color:var(--signal)}
              AWS X-Ray · OpenSearch · Azure Monitor · SLI and SLO instrumentation</p>
         </section>
         <section>
-          <h4><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg>Identity, secrets &amp; network security</h4>
-          <p>IAM and least privilege · Kubernetes RBAC · Zero Trust principles ·
-             HashiCorp Vault · AWS KMS and Secrets Manager · encryption at rest and in transit ·
+          <h4><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg>Identity &amp; access</h4>
+          <p>IAM and least privilege · role-based access control · Kubernetes RBAC ·
+             OAuth 2.0, OIDC and SAML federation · X.509 certificates ·
+             mutual TLS between services · Zero Trust principles ·
+             access review and permission governance</p>
+        </section>
+        <section>
+          <h4><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>Secrets, crypto &amp; network</h4>
+          <p>HashiCorp Vault and dynamic secrets · AWS KMS and Secrets Manager ·
+             certificate lifecycle and key rotation · encryption at rest and in transit ·
              vulnerability scanning and remediation · VPC design · ALB and NLB ·
              NGINX · HAProxy · security groups and NACLs</p>
         </section>
